@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Restaurant Uganda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #111; color: #fff; scroll-behavior: smooth; }
+    nav { background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); }
+    nav a { color: #fff !important; transition: 0.3s; }
+    nav a.active { color: #f39c12 !important; font-weight: bold; border-bottom: 2px solid #f39c12; }
+    nav a:hover { color: #f39c12 !important; transform: scale(1.1); }
+     .contact-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+    }
+
+    .contact-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .contact-button i {
+      font-size: 22px;
+    }
+
+    .contact-button:hover {
+      background-color: #eee;
+      transform: scale(1.03);
+    }
+
+    @media (min-width: 600px) {
+      .contact-section {
+        flex-direction: row;
+      }
+    }
+
+    .hero { height: 100vh; background: url('a1.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: white; font-family: 'Times New Roman', Times, serif; }
+    .hero h1 { font-size: 3.5rem; text-shadow: 2px 2px 8px #000; animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+    .offer-banner { background: linear-gradient(90deg, #f39c12, #e67e22); color: #fff; text-align: center; padding: 15px; font-weight: bold; font-size: 1.2rem; }
+
+    .menu-section { border: 2px solid #f39c12; border-radius: 12px; padding: 15px; background: rgba(255,255,255,0.05); }
+    table { color: #fff; border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #f39c12; padding: 10px; text-align: center; }
+    th { background: rgba(243,156,18,0.2); }
+
+    .search-box { margin-bottom: 10px; padding: 8px; width: 100%; border-radius: 8px; border: none; outline: none; }
+
+    footer { background: #000; padding: 20px; text-align: center; margin-top: 40px; }
+    footer a { margin: 0 10px; color: #f39c12; font-size: 1.5rem; transition: 0.3s; }
+    footer a:hover { color: #fff; transform: scale(1.2); }
+  .booking-form {
+  max-width: 600px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(243,156,18,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+  transform: perspective(1000px) rotateX(0deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.booking-form:hover {
+  transform: perspective(1000px) rotateX(5deg);
+  box-shadow: 0 10px 35px rgba(243,156,18,0.6);
+}
+.form-control, .form-select, textarea {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+}
+.form-control:focus, .form-select:focus, textarea:focus {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 10px rgba(243,156,18,0.8);
+  color: #fff;
+}
+label { color: #f39c12; font-weight: bold; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navMenu" data-bs-offset="70" tabindex="0">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-warning" href="#">Super Restaurant UG</a>
+    <button class="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="#home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#about">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#booking">Place Your Order</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#locate">Location</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#contacts">Contacts</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="reservation.html">Reservation</a>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="hero">
+  <div>
+    <h1>Welcome to Super Restaurant</h1>
+    <p class="lead">Authentic Ugandan Meals • Great Taste • Warm Hospitality</p>
+    <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+      <a href="#booking" class="btn btn-warning">Order Now</a>
+      <a href="reservation.html" class="btn btn-outline-light">Reserve Table</a>
+    </div>
+  </div>
+</section>
+
+<!-- Offer Banner -->
+<div class="offer-banner">
+  🎉 Today’s Offer: Rolex (Chapati & Eggs) only UGX 4,000! Limited Time 🎉
+</div>
+
+<!-- About -->
+<section id="about" class="container text-center py-5">
+  <h2 class="text-warning mb-4">About Us</h2>
+  <p>We serve Uganda’s finest traditional foods with a modern twist. From fresh matoke to savory luwombo, we celebrate local flavors cooked with passion and love.</p>
+</section>
+
+<!-- Menu -->
+<section id="menu" class="container py-5">
+  <h2 class="text-center text-warning mb-5">Our Ugandan Menu</h2>
+
+  <!-- Tabs -->
+  <ul class="nav nav-pills justify-content-center mb-4" id="menuTabs" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#breakfast">Breakfast</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#lunch">Lunch</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#supper">Supper / Takeaway</button></li>
+  </ul>
+
+  <div class="tab-content">
+    <!-- Breakfast -->
+    <div class="tab-pane fade show active" id="breakfast">
+      <div class="row g-4">
+        <!-- Table -->
+        <div class="col-md-6 menu-section">
+          <h4 class="text-warning text-center mb-3">Breakfast Menu</h4>
+          <input type="text" class="search-box" placeholder="Search Breakfast..." onkeyup="filterTable(this, 'breakfastTable')">
+          <table id="breakfastTable">
+            <tr><th>Food</th><th>Price (UGX)</th></tr>
+            <tr><td>Rolex (Chapati & Eggs)</td><td>5,000</td></tr>
+            <tr><td>Posho & Beans</td><td>6,000</td></tr>
+            <tr><td>Milk Tea & Chapati</td><td>4,000</td></tr>
+          </table>
+        </div>
+        <!-- Carousel -->
+        <div class="col-md-6 menu-section">
+          <h4 class="text-warning text-center mb-3">Breakfast Specials</h4>
+          <div id="breakfastCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images (4).jpeg" class="d-block w-100 rounded" alt="Rolex" height="300vh">
+                <div class="carousel-caption"><h5 class="bg-dark text-white p-3 rounded">Rolex - UGX 5,000</h5></div>
+              </div>
+              <div class="carousel-item">
+                <img src="download.jpeg" class="d-block w-100 rounded" alt="Posho & Beans" height="300vh">
+                <div class="carousel-caption"><h5 class="bg-dark text-white p-3 rounded">Posho & Beans - UGX 6,000</h5></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lunch -->
+    <div class="tab-pane fade" id="lunch">
+      <div class="row g-4">
+        <!-- Table -->
+        <div class="col-md-6 menu-section">
+          <h4 class="text-warning text-center mb-3">Lunch Menu</h4>
+          <input type="text" class="search-box" placeholder="Search Lunch..." onkeyup="filterTable(this, 'lunchTable')">
+          <table id="lunchTable">
+            <tr><th>Food</th><th>Price (UGX)</th></tr>
+            <tr><td>Matoke with Groundnut Sauce</td><td>12,000</td></tr>
+            <tr><td>Chicken Luwombo</td><td>18,000</td></tr>
+            <tr><td>Beans Stew with Rice</td><td>10,000</td></tr>
+          </table>
+        </div>
+        <!-- Carousel -->
+        <div class="col-md-6 menu-section">
+          <h4 class="text-warning text-center mb-3">Lunch Specials</h4>
+          <div id="lunchCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="a2.jpeg" class="d-block w-100 rounded" alt="Matoke">
+                <div class="carousel-caption"><h class="bg-dark text-white p-3 rounded"5>Matoke - UGX 12,000</h></div>
+              </div>
+              <div class="carousel-item">
+                <img src="a5.jpeg" class="d-block w-100 rounded" alt="Chicken Luwombo" height="300vh">
+                <div class="carousel-caption"><h5 class="bg-dark text-white p-3 rounded">Chicken Luwombo - UGX 18,000</h5></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supper -->
+    <div class="tab-pane fade" id="supper">
+      <div class="row g-4">
+        <!-- Table -->
+        <div class="col-md-6 menu-section">
+          <h4 class="text-warning text-center mb-3">Supper / Takeaway</h4>
+          <input type="text" class="search-box" placeholder="Search Supper..." onkeyup="filterTable(this, 'supperTable')">
+          <table id="supperTable">
+            <tr><th>Food</th><th>Price (UGX)</th></tr>
+            <tr><td>Nile Perch Fish Stew</td><td>20,000</td></tr>
+            <tr><td>Katogo (Matoke Mix)</td><td>10,000</td></tr>
+            <tr><td>Beef Pilau</td><td>15,000</td></tr>
+          </table>
+        </div>
+        <!-- Carousel -->
+        <div class="col-md-6 menu-section">
+          <h4 class="text-warning text-center mb-3">Supper Specials</h4>
+          <div id="supperCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="a4.jpeg" class="d-block w-100 rounded" alt="Fish Stew" height="300vh">
+                <div class="carousel-caption"><h5 class="bg-dark text-white p-3 rounded">Fish Stew - UGX 20,000</h5></div>
+              </div>
+              <div class="carousel-item">
+                <img src="a3.jpeg" class="d-block w-100 rounded" alt="Katogo" height="300vh">
+                <div class="carousel-caption"><h5 class="bg-dark text-white p-3 rounded">Katogo - UGX 10,000</h5></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Booking Form -->
+<section id="booking" class="container py-5">
+  <h2 class="text-center text-warning mb-5">Book Your Meal</h2>
+  <div class="booking-form mx-auto p-4">
+    <form id="orderForm">
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Food Description</label>
+        <textarea class="form-control" id="foodDesc" rows="2" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Delivery or Pickup</label>
+        <select class="form-select" id="orderType" required onchange="toggleOptions()">
+          <option value="">-- Select Option --</option>
+          <option value="delivery">Delivery</option>
+          <option value="pickup">Pickup</option>
+        </select>
+      </div>
+      <div id="deliveryOption" class="mb-3 d-none">
+        <label class="form-label">Current Location</label>
+        <input type="text" class="form-control" id="location" readonly>
+        <small class="text-warning">⚠️ Extra delivery fees will be added based on distance.</small>
+      </div>
+      <div id="pickupOption" class="mb-3 d-none">
+        <label class="form-label">Estimated Pickup Time</label>
+        <input type="time" class="form-control" id="pickupTime">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Preferred Payment Method</label>
+        <select class="form-select" id="paymentMethod" required>
+          <option value="">-- Select Payment Method --</option>
+          <option value="Mobile Money">Mobile Money</option>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+          <option value="Card Payment">Card Payment</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-warning w-100">Submit Order</button>
+    </form>
+  </div>
+</section>
+  <!-- Google Maps Section -->
+<section id="locate" class="container py-5" class="location">
+  <h2 class="text-center text-warning mb-4">Our Location</h2>
+  <div class="map-container" style="border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31816.379364372717!2d32.5825208!3d0.3475967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb2e5e2a9cf1%3A0x8eab5c8ff!2sKampala%2C%20Uganda!5e0!3m2!1sen!2sug!4v1693258924764!5m2!1sen!2sug" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <!-- Floating Find Us on Maps Button -->
+<a href="https://www.google.com/maps/dir/?api=1&destination=Kampala,+Uganda" 
+   target="_blank" 
+   class="btn btn-warning position-fixed" 
+   style="bottom: 20px; right: 20px; z-index: 1050; border-radius: 50px; padding: 12px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); font-weight: bold;">
+   📍 Find Us on Maps
+</a>
+</section>
+   
+  
+      <section class="contact-section bg-dark" id="contacts">
+        <h2 class="text-center text-warning mb-4">Our Contacts</h2>
+
+    <!-- Call Now -->
+    <a href="tel:+256700531200" class="contact-button">
+      <i class="fas fa-phone"></i>
+      Call Now
+    </a>
+
+    <!-- WhatsApp Chat -->
+    <a href="https://wa.me/256700531200?text=Hello%20there!" class="contact-button" target="_blank">
+      <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+      Chat with Us
+    </a>
+
+    <!-- Send Email -->
+    <a href="mailto:pythonpro2005@gmail.com.com?subject=Hello&body=I%20want%20to%20get%20in%20touch" class="contact-button">
+      <i class="fas fa-envelope"></i>
+      Send Email
+    </a>
+  </section>
+
+<!-- Footer -->
+<footer>
+  <p>Working Days: Mon - Sun | Hours: 9:00 AM - 11:00 PM</p>
+  <div>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <p class="mt-2">&copy; 2025 Super Restaurant Uganda. All Rights Reserved.</p>
+</footer>
+  <script>
+  function toggleOptions() {
+  const type = document.getElementById("orderType").value;
+  const delivery = document.getElementById("deliveryOption");
+  const pickup = document.getElementById("pickupOption");
+  const pickupMapBtn = document.getElementById("pickupMapBtn");
+
+  if (type === "delivery") {
+    delivery.classList.remove("d-none");
+    pickup.classList.add("d-none");
+    pickupMapBtn.classList.add("d-none");
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(pos) {
+        document.getElementById("location").value =
+          "Lat: " + pos.coords.latitude.toFixed(4) + 
+          ", Lng: " + pos.coords.longitude.toFixed(4);
+      }, function() {
+        document.getElementById("location").value = "Unable to fetch location.";
+      });
+    }
+  } else if (type === "pickup") {
+    pickup.classList.remove("d-none");
+    delivery.classList.add("d-none");
+    pickupMapBtn.classList.remove("d-none"); // show button
+  } else {
+    pickup.classList.add("d-none");
+    delivery.classList.add("d-none");
+    pickupMapBtn.classList.add("d-none");
+  }
+}
+  </script>
+<script>
+function toggleOptions() {
+  const type = document.getElementById("orderType").value;
+  const delivery = document.getElementById("deliveryOption");
+  const pickup = document.getElementById("pickupOption");
+
+  if (type === "delivery") {
+    delivery.classList.remove("d-none");
+    pickup.classList.add("d-none");
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(pos) {
+        document.getElementById("location").value =
+          "Lat: " + pos.coords.latitude.toFixed(4) + 
+          ", Lng: " + pos.coords.longitude.toFixed(4);
+      }, function() {
+        document.getElementById("location").value = "Unable to fetch location.";
+      });
+    }
+  } else if (type === "pickup") {
+    pickup.classList.remove("d-none");
+    delivery.classList.add("d-none");
+  } else {
+    pickup.classList.add("d-none");
+    delivery.classList.add("d-none");
+  }
+}
+
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const paymentMethod = document.getElementById("paymentMethod").value;
+  alert("✅ Order received! Payment method: " + paymentMethod + 
+        ".\n💳 Payment expected within a few minutes from now.");
+});
+</script>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function filterTable(input, tableId) {
+  let filter = input.value.toLowerCase();
+  let table = document.getElementById(tableId);
+  let rows = table.getElementsByTagName("tr");
+
+  for (let i = 1; i < rows.length; i++) {
+    let food = rows[i].getElementsByTagName("td")[0];
+    if (food) {
+      let textValue = food.textContent || food.innerText;
+      rows[i].style.display = textValue.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+    }
+  }
+}
+</script>
+</body>
+</html>
